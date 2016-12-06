@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompnameComponent implements OnInit {
 
+  shallpass = {
+  	  name: 'Frodo'
+  };
+
   constructor() { }
 
   ngOnInit() {

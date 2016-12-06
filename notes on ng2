@@ -1,4 +1,6 @@
 notes on ng2
+https://www.youtube.com/watch?v=xFYzfHGCJBw
+
 
 Install:
 1) npm install angular-cli -g
@@ -104,3 +106,23 @@ objec = {
 	name: 'Brian'
 }
 <input [(ngModel)]="objec.name"/>
+
+10) Custom Decorator: Input data binding @Input
+	We will pass data from one component to another
+
+PARENT COMPONENT:
+	var shallPass = {
+		name: 'Frodo'
+	}
+
+	<child-component [property1]="shalPass" ></child-component>
+
+CHILD COMPONENT:
+	import { ...., Input...
+	@Input() shallPass;
+
+	{{shallPass.name}}
+
+11) Custom Decorator: Event binding @Output
+PARENT COMPONENT:
+	<child-component (onCusevent)="yell($event)">

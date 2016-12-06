@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-subcomp',
@@ -14,6 +14,9 @@ export class SubcompComponent implements OnInit {
   objec = {
 	name: 'Brian'
   }
+
+  @Input() shallpass;
+
 
   imClicked(){
   	alert("I was clicked");
