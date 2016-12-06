@@ -77,10 +77,30 @@ It looks like this:
 			}
 
 9) Data binding
-{{ value }}
+				A){{ value }}
 
-<input [required]='expression' />					<-- data binding
+				<input [required]='expression' />					<-- data binding
 
-<button (click)='expression/function'>				<-- event binding
+example:
+<input [value]="myString" />
+myString is a value in the .ts component file
+The HTML attribute is binded to the model value
 
-<input [(ngModel)]='model/object'>					<-- model binding 
+OR BETTER YET: [attr.value] where [attr.] references that it is an html attribute and value the name of the attribute
+
+[[you could also use interpolation]]
+<input value="{{myString}}" />
+
+
+				B)<button (click)='expression/function'>				<-- event binding
+
+You can do this with common events like (click)
+or custom angular2 events such as (update) on components
+<app-home (update)='function'></app-home>
+
+				C)<input [(ngModel)]='model/object'>					<-- model binding (2way)
+in controller:
+objec = {
+	name: 'Brian'
+}
+<input [(ngModel)]="objec.name"/>

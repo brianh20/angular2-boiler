@@ -8,6 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class SubcompComponent implements OnInit {
 
   title="This is a beautiful component";
+  myString="I like chicken";
+  myBoolean=true;
+
+  objec = {
+	name: 'Brian'
+  }
+
+  imClicked(){
+  	alert("I was clicked");
+  }
 
   constructor() { }
 
