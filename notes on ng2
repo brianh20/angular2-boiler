@@ -1,0 +1,86 @@
+notes on ng2
+
+Install:
+1) npm install angular-cli -g
+Create Project:
+2) ng new project-name
+
+Add to repository:
+3) git remote add angular2-boiler http://github.com/brianh20/angular2-boiler
+Push to git:
+4) git push --set-upstream angular2-boiler master 
+
+View hello world:
+5) ng serve : it will run on localhost:4200
+
+6) TypeScript:
+ -- can't change variable type
+ -- you can declar the variable type like this:
+ 	myVar:string = "hello"
+ 	myVar:number
+ 	myVar:boolean
+ 	myVar:any -> will take type of the first value assigned
+ 	myVar:number[]
+
+
+ -- class Car {
+ 		wheels: number;									// CUSTOM VARIABLE
+ 		speed:number = 120;
+
+ 		drive { 										// CUSTOM METHOD
+ 			console.log('the car is driving')
+ 		}
+
+ 		constructor(variab:number){						// STANDARD/default METHOD
+ 			this.wheels = variab;
+ 		}									
+ 	}
+ 	myCar:Car = new Car(6)
+	Notice how it doesn't have a semicolon or a comma separation
+ 
+7) Form for ts classes:
+
+			import { Component } from '@angular/core';
+
+			@Component({   								   //decorator
+				modelueId: module.id,					   //------------------------------------>> ??
+				selector: 'app-root',                      //nombre de la directiva
+				templateUrl: 'app.component.html',         //archivo del template para la directiva
+				styleUrls: ['app.component.css']           //archivo del estilo para el template
+			}) 
+
+			export class AppComponent {
+				title = 'app works!'                       //logica de la clase, en este caso una variable con un valor
+			}
+
+
+8) Create a new component
+Go to src/app folder in CMD
+	ng generate component compname
+The component will be inside the app folder meaning it is one folder deeper.
+It looks like this:
+
+			import { Component, OnInit } from '@angular/core';
+
+			@Component({
+			  selector: 'app-compname',
+			  templateUrl: './compname.component.html',
+			  styleUrls: ['./compname.component.css']
+			})
+			export class CompnameComponent implements OnInit {
+
+			  constructor() { }
+
+			  ngOnInit() {
+			  }
+
+			}
+
+9) Data binding
+{{ value }}
+
+<input [required]='expression' />					<-- data binding
+
+<button (click)='expression/function'>				<-- event binding
+
+<input [(ngModel)]='model/object'>					<-- model binding 
