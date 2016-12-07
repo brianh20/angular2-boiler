@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { CompnameComponent } from './compname/compname.component';
 import { SubcompComponent } from './compname/subcomp/subcomp.component';
+import { AlternateComponent } from './alternate/alternate.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CompnameComponent,
-    SubcompComponent
+    SubcompComponent,
+    AlternateComponent
   ],
   imports: [
     BrowserModule,

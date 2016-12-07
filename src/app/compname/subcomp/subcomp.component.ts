@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-subcomp',
@@ -16,10 +16,16 @@ export class SubcompComponent implements OnInit {
   }
 
   @Input() shallpass;
+  @Output() onYell = new EventEmitter();
 
 
   imClicked(){
   	alert("I was clicked");
+  }
+
+  fireYellEvent(e){
+    var f=this.objec;
+    this.onYell.emit(f);
   }
 
   constructor() { }

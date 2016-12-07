@@ -11,6 +11,11 @@ export class CompnameComponent implements OnInit {
   	  name: 'Frodo'
   };
 
+  yell(f){
+  	alert(f.name + " is yelling");
+    console.log(f);
+  }
+
   constructor() { }
 
   ngOnInit() {
